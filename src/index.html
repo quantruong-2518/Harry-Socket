@@ -1,88 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
-    <style>
-      body {
-        margin: 0;
-        padding-bottom: 3rem;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-      }
+    <title>Steveket</title>
 
-      #form {
-        background: rgba(0, 0, 0, 0.15);
-        padding: 0.25rem;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        height: 3rem;
-        box-sizing: border-box;
-        backdrop-filter: blur(10px);
-      }
-      #input {
-        border: none;
-        padding: 0 1rem;
-        flex-grow: 1;
-        border-radius: 2rem;
-        margin: 0.25rem;
-      }
-      #input:focus {
-        outline: none;
-      }
-      #form > button {
-        background: #333;
-        border: none;
-        padding: 0 1rem;
-        margin: 0.25rem;
-        border-radius: 3px;
-        outline: none;
-        color: #fff;
-      }
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="https://cdn.worldvectorlogo.com/logos/socket-io.svg" type="image/x-icon">
 
-      #messages {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      #messages > li {
-        padding: 0.5rem 1rem;
-      }
-      #messages > li:nth-child(odd) {
-        background: #efefef;
-      }
-    </style>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
-  </body>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var socket = io();
-
-    var messages = document.getElementById("messages");
-    var form = document.getElementById("form");
-    var input = document.getElementById("input");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (input.value) {
-        socket.emit("c_message", input.value);
-        input.value = "";
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        font-size: 20px;
+        color: black;
       }
-    });
+      img {
+        object-fit: contain;
+        width: 10rem;
+        border-radius: 1rem;
+      }
 
-    socket.on("b_message", function (msg) {
-      var item = document.createElement("li");
-      item.textContent = msg;
-      messages.appendChild(item);
-      window.scrollTo(0, document.body.scrollHeight);
-    });
-  </script>
+      em {
+        margin-bottom: 1rem;
+      }
+
+      span { 
+        color: rgb(39,123,233);
+      }
+    </style>
+
+    <h1><b>This is Steveket</b></h1>
+    <em>But this site is under maintenance ... !!!</em>
+    <img
+      src="https://i.kym-cdn.com/photos/images/facebook/000/611/330/104.png"
+      alt="cry"
+    />
+    <p>...</p>
+    <p>
+      Just kidding, please use this one for connect Steveket:
+      <span>http://139.180.132.97:3000/</span>
+    </p>
+    <p>Get new messages with: <span>"b_messages"</span></p>
+    <p>Send your message: <span>"c_messages"</span></p>
+  </body>
 </html>
