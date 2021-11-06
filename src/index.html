@@ -3,9 +3,13 @@
   <head>
     <title>Steveket</title>
 
+    <link rel="stylesheet" href="css/styles.css" />
+
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
     />
 
     <!-- favicon  -->
@@ -25,82 +29,22 @@
   </head>
 
   <body>
-    <style>
-      body {
-        font-family: "Raleway", sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100vh;
-        font-size: 20px;
-        color: black;
-      }
-      img {
-        object-fit: contain;
-        width: 10rem;
-        border-radius: 1rem;
-      }
-
-      em {
-        margin-bottom: 1rem;
-      }
-
-      span {
-        color: rgb(39, 123, 233);
-      }
-
-      .btn-bubble {
-        font-size: 3rem;
-        position: fixed;
-        bottom: 2rem;
-        right: 1rem;
-        color: #4c6ef5;
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .btn-bubble:hover {
-        background-color: ghostwhite;
-        cursor: pointer;
-        box-shadow: 1px 1px 8px #888;
-      }
-
-      #siWidget-chat {
-        position: fixed;
-        right: 25px;
-        height: calc(100% - 150px);
-        bottom: 7rem;
-        width: 360px;
-        min-height: 260px;
-        max-height: 590px;
-        -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15) !important;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15) !important;
-        border-radius: 6px !important;
-        overflow: hidden !important;
-        z-index: 9999999;
-        transform-origin: right 95% 0;
-        transform: translate(0px, 0px) scale(0.1);
-        opacity: 0;
-        display: none;
-        transition: all 0.5s ease-in-out;
-      }
-
-      .siScale {
-        display: block !important;
-        transform: scale(1) !important;
-        transform-origin: right 95% 0 !important;
-        opacity: 1 !important;
-      }
-    </style>
-
-    <h1><b>-- Chatbot test website </b></h1>
+    <h1><b>-- Chatbot test website --</b></h1>
 
     <span onclick="togglePopup()" id="btn-Bubble" class="btn-bubble">
-      <i class="fab fa-facebook-messenger"></i>
+      <i
+        style="display: none"
+        id="bot-icon"
+        alt="bot-icon"
+        class="fa fa-robot icon show"
+      ></i>
+      <i
+        style="display: none"
+        id="minus-icon"
+        alt="minus-icon"
+        class="fa fa-minus icon"
+        aria-hidden="true"
+      ></i>
     </span>
 
     <iframe
@@ -113,10 +57,18 @@
 
     <script>
       const ifr = document.getElementById("siWidget-chat");
+      const minusIcon = document.getElementById("minus-icon");
+      const botIcon = document.getElementById("bot-icon");
 
       function togglePopup() {
+        // scale iframe
         const isContainScale = ifr.classList.contains("siScale");
         ifr.classList.toggle("siScale", !isContainScale);
+
+        // swap icons
+        const isShowingBotIcon = botIcon.classList.contains("show");
+        botIcon.classList.toggle("show", !isShowingBotIcon);
+        minusIcon.classList.toggle("show", isShowingBotIcon);
       }
     </script>
   </body>

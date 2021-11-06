@@ -6,6 +6,8 @@ const SocketServices = require("./socket");
 const app = express();
 const server = http.createServer(app);
 
+app.use(express.static(__dirname+'/public'));
+
 const PORT = process.env.PORT || 3000;
 app.set("port", PORT);
 
