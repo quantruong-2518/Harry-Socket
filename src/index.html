@@ -32,7 +32,7 @@
     <h1><b>-- Chatbot test website --</b></h1>
 
     <span onclick="togglePopup()" id="btn-Bubble" class="btn-bubble">
-      <i
+      <!-- <i
         style="display: none"
         id="bot-icon"
         alt="bot-icon"
@@ -44,7 +44,8 @@
         alt="minus-icon"
         class="fa fa-minus icon"
         aria-hidden="true"
-      ></i>
+      ></i> -->
+      <img src="icons/chatbot-icon.png" alt="icon" />
     </span>
 
     <iframe
@@ -66,9 +67,9 @@
         ifr.classList.toggle("siScale", !isContainScale);
 
         // swap icons
-        const isShowingBotIcon = botIcon.classList.contains("show");
-        botIcon.classList.toggle("show", !isShowingBotIcon);
-        minusIcon.classList.toggle("show", isShowingBotIcon);
+        // const isShowingBotIcon = botIcon.classList.contains("show");
+        // botIcon.classList.toggle("show", !isShowingBotIcon);
+        // minusIcon.classList.toggle("show", isShowingBotIcon);
       }
     </script>
   </body>

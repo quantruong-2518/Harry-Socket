@@ -1,12 +1,14 @@
 const express = require("express");
 const http = require("http");
+const path = require('path');
 
 const SocketServices = require("./socket");
 
 const app = express();
 const server = http.createServer(app);
 
-app.use(express.static(__dirname+'/public'));
+var dir = path.join(__dirname, "public");
+app.use(express.static(dir));
 
 const PORT = process.env.PORT || 3000;
 app.set("port", PORT);
