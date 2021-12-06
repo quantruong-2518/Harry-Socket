@@ -26,9 +26,9 @@ em {
   position: fixed;
   bottom: 2rem;
   right: 1rem;
-  background-color: #83afe1;
-  height: 5rem;
-  width: 5rem;
+  background-color: rgb(10, 124, 255);
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
